@@ -1,16 +1,303 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import { profile } from "../data/profile";
+import { experience } from "../data/experience";
+import { education } from "../data/education";
+import { skills } from "../data/skills";
+import { software } from "../data/software";
+import { projects } from "../data/projects";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="Martín Toloza | Analista Contable"
+  description="Perfil profesional, experiencia y competencias contables de Martín Toloza."
+>
+
+  <!-- PORTADA -->
+  <section class="hero" id="inicio">
+    <div class="container hero-content">
+
+      <div class="hero-text">
+
+        <span class="eyebrow">
+          PORTAFOLIO PROFESIONAL
+        </span>
+
+        <h1>
+          {profile.name}
+        </h1>
+
+        <h2>
+          {profile.role}
+        </h2>
+
+        <p>
+          {profile.introduction}
+        </p>
+
+        <div class="hero-actions">
+          <a href="#experiencia" class="button button-primary">
+            Conocer experiencia
+          </a>
+
+          <a href="#contacto" class="button button-outline">
+            Contactar
+          </a>
+        </div>
+
+        <span class="location">
+          {profile.location}
+        </span>
+
+      </div>
+
+      <div class="hero-card">
+        <span class="hero-card-label">PERFIL CONTABLE</span>
+
+        <div class="hero-initials">MT</div>
+
+        <p>
+          Organización, análisis y responsabilidad
+          en los procesos contables.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PERFIL -->
+  <section class="section" id="perfil">
+    <div class="container">
+
+      <span class="eyebrow">SOBRE MÍ</span>
+
+      <h2 class="section-title">
+        Perfil profesional
+      </h2>
+
+      <p class="section-description">
+        {profile.description}
+      </p>
+
+      <div class="information-grid">
+
+        <article class="information-card">
+          <span>Experiencia reportada</span>
+          <strong>5 años</strong>
+          <p>Trayectoria laboral acumulada según los datos suministrados.</p>
+        </article>
+
+        <article class="information-card">
+          <span>Formación profesional</span>
+          <strong>Contaduría Pública</strong>
+          <p>{profile.educationStatus}</p>
+        </article>
+
+        <article class="information-card">
+          <span>Formación técnica</span>
+          <strong>Administrativo y Contable</strong>
+          <p>{profile.technicalTitle}</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- EXPERIENCIA -->
+  <section class="section section-light" id="experiencia">
+    <div class="container">
+
+      <span class="eyebrow">TRAYECTORIA</span>
+
+      <h2 class="section-title">
+        Experiencia laboral
+      </h2>
+
+      <p class="section-description">
+        Experiencia en diferentes organizaciones y entornos empresariales.
+      </p>
+
+      <div class="cards-grid">
+
+        {experience.map((experience) => (
+          <article class="content-card">
+
+            <span class="card-category">
+              {experience.duration}
+            </span>
+
+            <h3>{experience.company}</h3>
+
+            <h4>{experience.position}</h4>
+
+            
+
+          </article>
+        ))}
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FORMACIÓN -->
+  <section class="section" id="formacion">
+    <div class="container">
+
+      <span class="eyebrow">ESTUDIOS</span>
+
+      <h2 class="section-title">
+        Formación académica
+      </h2>
+
+      <div class="cards-grid">
+
+        {education.map((item) => (
+          <article class="content-card">
+
+            <span class="card-category">
+              {item.period}
+            </span>
+
+            <h3>{item.title}</h3>
+
+            <h4>{item.institution}</h4>
+
+            <p>{item.status}</p>
+
+          </article>
+        ))}
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- COMPETENCIAS -->
+  <section class="section section-light" id="competencias">
+    <div class="container">
+
+      <span class="eyebrow">CONOCIMIENTOS</span>
+
+      <h2 class="section-title">
+        Competencias profesionales
+      </h2>
+
+      <div class="cards-grid">
+
+        {skills.map((skill) => (
+          <article class="content-card">
+
+            <h3>{skill.category}</h3>
+
+            <ul class="skill-list">
+              {skill.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+
+          </article>
+        ))}
+
+      </div>
+
+      <h2 class="section-title software-title">
+        Herramientas digitales
+      </h2>
+
+      <div class="software-grid">
+
+        {software.map((tool) => (
+          <article class="software-card">
+            <h3>{tool.name}</h3>
+            <span>{tool.category}</span>
+            <p>{tool.level}</p>
+          </article>
+        ))}
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PROYECTOS -->
+  <section class="section" id="proyectos">
+    <div class="container">
+
+      <span class="eyebrow">APLICACIÓN PRÁCTICA</span>
+
+      <h2 class="section-title">
+        Proyectos demostrativos
+      </h2>
+
+      <div class="cards-grid">
+
+        {projects.map((project) => (
+          <article class="content-card">
+
+            <span class="card-category">
+              {project.category}
+            </span>
+
+            <h3>{project.title}</h3>
+
+            <p>{project.description}</p>
+
+            <div class="tags">
+              {project.technologies.map((technology) => (
+                <span>{technology}</span>
+              ))}
+            </div>
+
+          </article>
+        ))}
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACTO -->
+  <section class="section contact-section" id="contacto">
+    <div class="container">
+
+      <span class="eyebrow">CONTACTO</span>
+
+      <h2 class="section-title">
+        Construyamos nuevas oportunidades
+      </h2>
+
+      <p class="section-description">
+        Para conocer más sobre el perfil profesional o establecer
+        contacto, puedes consultar los datos de contacto cuando
+        estén incorporados.
+      </p>
+
+      {profile.email && (
+        <a
+          href={`mailto:${profile.email}`}
+          class="button button-primary"
+        >
+          Enviar correo
+        </a>
+      )}
+
+      {profile.linkedin && (
+        <a
+          href={profile.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button button-outline"
+        >
+          LinkedIn
+        </a>
+      )}
+
+    </div>
+  </section>
+
+</BaseLayout>
