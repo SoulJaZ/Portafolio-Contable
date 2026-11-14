@@ -1,0 +1,18 @@
+---
+interface Props {
+    duration: string;
+    position: string;
+    company: string;
+    description: string;
+}
+
+const { duration, position, company, description } = Astro.props as Props;
+---
+
+<article class="content-card">
+    <span class="card-category">{duration}</span>
+    <h3>{position}</h3>
+    <h4>{company}</h4>
+    <p>{description}</p>
+
+</article>

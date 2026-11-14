@@ -1,0 +1,55 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SkillCard from "../components/SkillCard.astro";
+import SoftwareCard from "../components/SoftwareCard.astro";
+
+import { skills } from "../data/skills";
+import { software } from "../data/software";
+---
+
+<BaseLayout
+  title="Competencias | Martín Toloza"
+  description="Competencias contables, tributarias y herramientas digitales."
+>
+  <section class="page-banner">
+    <div class="container">
+      <span class="eyebrow">CONOCIMIENTOS Y HABILIDADES</span>
+
+      <h1>Competencias profesionales</h1>
+
+      <p>
+        Conocimientos aplicados a los procesos contables,
+        administrativos y tributarios.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Áreas de conocimiento</h2>
+
+      <div class="cards-grid">
+        {skills.map((skill) => (
+          <SkillCard
+            category={skill.category}
+            items={skill.items}
+          />
+        ))}
+      </div>
+
+      <h2 class="section-title software-title">
+        Herramientas digitales
+      </h2>
+
+      <div class="software-grid">
+        {software.map((tool) => (
+          <SoftwareCard
+            name={tool.name}
+            level={tool.level}
+            category={tool.category}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

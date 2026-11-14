@@ -1,0 +1,31 @@
+---
+import { profile } from "../data/profile";
+---
+
+<section class="section contact-section" id="contacto">
+  <div class="container">
+    <span class="eyebrow">CONTACTO</span>
+
+    <h2 class="section-title">
+      Construyamos nuevas oportunidades
+    </h2>
+
+    <p class="section-description">
+      Si deseas conocer más sobre el perfil profesional,
+      puedes establecer contacto a través del siguiente medio.
+    </p>
+
+    {profile.email ? (
+      <a
+        href={`mailto:${profile.email}`}
+        class="button button-primary"
+      >
+        Enviar correo electrónico
+      </a>
+    ) : (
+      <p class="contact-pending">
+        Información de contacto pendiente de actualización.
+      </p>
+    )}
+  </div>
+</section>

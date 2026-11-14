@@ -1,0 +1,16 @@
+---
+interface Props {
+    category: string;
+    items: string[];
+}
+const { category, items } = Astro.props as Props;
+
+---
+<article class="content-card">
+    <h3>{category}</h3>
+    <ul class="skill-list">
+        {items.map((item) => (
+            <li>{item}</li>
+        ))}
+    </ul>
+</article>

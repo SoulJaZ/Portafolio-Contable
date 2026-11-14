@@ -1,0 +1,17 @@
+---
+interface Props {
+    institution: string;
+    title: string;
+    period: string;
+    status: string;
+}
+
+const { institution, title, period, status } = Astro.props as Props;
+---
+
+<article class="content-card">
+    <span class="card-category">{period}</span>
+    <h3>{title}</h3>
+    <h4>{institution}</h4>
+    <p>{status}</p>
+</article>

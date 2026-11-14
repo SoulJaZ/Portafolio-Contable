@@ -1,0 +1,29 @@
+---
+import {profile} from '../data/profile.js';
+---
+
+<section class="section" id="perfil">
+    <div class="container">
+        <span class="eyebrow">SOBRE MÍ</span>
+        <h2 class="section-tittle">Perfil profesional</h2>
+        <p class="section-description">
+            {profile.description}
+        </p>
+        <div class="information-grid">
+            <article class="information-card">
+                <span>Ubicación</span>
+                <strong>{profile.location}</strong>
+            </article>
+            <article class="information-card">
+                <span>Formación profesional</span>
+                <strong>Contaduría Pública</strong>
+                <p>{profile.educationStatus}</p>
+            </article>
+            <article class="information-card">
+                <span>Formación técnica</span>
+                <strong>Administración y Contable</strong>
+                <p>profile.technicalTittle</p>
+            </article>
+        </div>
+    </div>
+</section>

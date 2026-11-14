@@ -1,0 +1,13 @@
+---
+interface Props {
+    name: string;
+    level: string;
+    category: string;
+}
+const { name, level, category } = Astro.props as Props;
+---
+<article class="software-card">
+    <h3>{name}</h3>
+    <span class="card-category">{category}</span>
+    <p>{level}</p>
+</article>

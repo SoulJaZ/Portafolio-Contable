@@ -1,0 +1,45 @@
+---
+import { education } from '../data/education';
+import EducationCard from '../components/EducationCard.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+    title="Formación académica | Martín Toloza"
+    description="Formación académica y técnica."
+>
+  <section class="page-banner">
+    <div class="container">
+      <span class="eyebrow">FORMACIÓN</span>
+      <h1>Formación académica</h1>
+      <p>
+        Estudios y preparación académica relacionados
+        con el área administrativa y contable.
+      </p>
+    </div>
+  </section>
+  <section class="section">
+     <div class="container">
+      <div class="cards-grid">
+        {education.map((item) => (
+          <EducationCard
+            institution={item.institution}
+            title={item.title}
+            period={item.period}
+            status={item.status}
+          />
+        ))}
+      </div>
+
+      <div class="academic-notice">
+        <h3>Estado de formación profesional</h3>
+
+        <p>
+          Las asignaturas del programa de Contaduría Pública
+          están culminadas. Se encuentra pendiente el pago
+          de los derechos de grado.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

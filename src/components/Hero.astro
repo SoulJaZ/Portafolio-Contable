@@ -1,0 +1,36 @@
+---
+import {profile} from '../data/profile.js';
+---
+<section class="hero" id="inicio">
+  <div class="container hero-content">
+    <div class="hero-text">
+      <span class="eyebrow">PORTAFOLIO PROFESIONAL</span>
+
+      <h1>{profile.name}</h1>
+
+      <h2>{profile.role}</h2>
+
+      <p>{profile.introduction}</p>
+
+      <div class="hero-actions">
+        <a href="/experiencia" class="button button-primary">
+          Conocer experiencia
+        </a>
+
+        <a href="/competencias" class="button button-outline">
+          Ver competencias
+        </a>
+      </div>
+
+      <span class="location">{profile.location}</span>
+    </div>
+
+    <div class="hero-card">
+      <span class="hero-card-label">PERFIL CONTABLE</span>
+
+      <div class="hero-initials">MT</div>
+
+      <p>Organización, análisis y responsabilidad en los procesos contables.</p>
+    </div>
+  </div>
+</section>

@@ -475,3 +475,72 @@ a {
     text-align: center;
   }
 }
+/* ENCABEZADOS DE LAS PÁGINAS INTERNAS */
+
+.page-banner {
+  background: var(--ivory);
+  padding: 75px 0;
+}
+
+.page-banner h1 {
+  color: var(--green);
+  font-family: Georgia, serif;
+  font-size: clamp(35px, 5vw, 52px);
+  margin: 15px 0;
+}
+
+.page-banner p {
+  color: var(--muted);
+  max-width: 650px;
+}
+
+
+/* AVISOS INFORMATIVOS */
+
+.information-note {
+  margin-top: 30px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.academic-notice {
+  margin-top: 35px;
+  padding: 25px;
+  background: var(--ivory);
+  border-left: 4px solid var(--gold);
+  border-radius: 4px;
+}
+
+.academic-notice h3 {
+  color: var(--green);
+  margin-bottom: 10px;
+}
+
+.academic-notice p {
+  color: var(--muted);
+}
+
+.contact-pending {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+
+/* NAVEGACIÓN ENTRE PÁGINAS */
+
+.navigation a {
+  transition: color 0.2s ease;
+}
+
+.navigation a:hover {
+  color: var(--gold);
+}
+
+
+/* AJUSTES RESPONSIVE */
+
+@media (max-width: 650px) {
+  .page-banner {
+    padding: 55px 0;
+  }
+}

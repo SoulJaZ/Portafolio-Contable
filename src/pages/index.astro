@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 import { profile } from "../data/profile";
-import { experience } from "../data/experience";
+import { experiences } from "../data/experiences";
 import { education } from "../data/education";
 import { skills } from "../data/skills";
 import { software } from "../data/software";
@@ -122,7 +122,7 @@ import { projects } from "../data/projects";
 
       <div class="cards-grid">
 
-        {experience.map((experience) => (
+        {experiences.map((experience) => (
           <article class="content-card">
 
             <span class="card-category">

@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ExperienceCard from "../components/ExperienceCard.astro";
+import { experiences } from "../data/experiences";
+---
+
+<BaseLayout
+  title="Experiencia laboral | Martín Toloza"
+  description="Trayectoria y experiencia laboral."
+>
+  <section class="page-banner">
+    <div class="container">
+      <span class="eyebrow">TRAYECTORIA PROFESIONAL</span>
+
+      <h1>Experiencia laboral</h1>
+
+      <p>
+        Conoce la trayectoria laboral y la experiencia
+        en diferentes entornos empresariales.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="cards-grid">
+        {experiences.map((experience) => (
+          <ExperienceCard
+            company={experience.company}
+            position={experience.position}
+            duration={experience.duration}
+            description={experience.description}
+          />
+        ))}
+      </div>
+
+      <p class="information-note">
+        Las funciones y fechas específicas se actualizarán
+        cuando sean confirmadas.
+      </p>
+
+    </div>
+  </section>
+</BaseLayout>

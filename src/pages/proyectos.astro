@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+import { projects } from "../data/projects";
+---
+
+<BaseLayout
+  title="Proyectos | Martín Toloza"
+  description="Casos prácticos y proyectos demostrativos del área contable."
+>
+  <section class="page-banner">
+    <div class="container">
+      <span class="eyebrow">APLICACIÓN PRÁCTICA</span>
+
+      <h1>Proyectos demostrativos</h1>
+
+      <p>
+        Ejercicios y propuestas que permiten demostrar
+        conocimientos y habilidades contables.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="project-introduction">
+        <h2 class="section-title">
+          Casos prácticos
+        </h2>
+
+        <p class="section-description">
+          Los siguientes proyectos tienen carácter demostrativo.
+          No representan documentos internos ni entregables
+          de las empresas donde se ha trabajado.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        {projects.map((project) => (
+          <ProjectCard
+            title={project.title}
+            category={project.category}
+            description={project.description}
+            technologies={project.technologies}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
